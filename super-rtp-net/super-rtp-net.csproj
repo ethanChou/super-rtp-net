@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7CDAF8FB-83FF-4F39-B341-B18CA40D2E6E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>super.rtp.net</RootNamespace>
+    <AssemblyName>super.rtp.net</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DisposeObject.cs" />
+    <Compile Include="PacketComparer.cs" />
+    <Compile Include="ParticipantContainer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rtcp\RtcpAPP.cs" />
+    <Compile Include="Rtcp\RtcpBYE.cs" />
+    <Compile Include="Rtcp\RtcpCompoundPacket.cs" />
+    <Compile Include="Rtcp\RtcpPacket.cs" />
+    <Compile Include="Rtcp\RtcpReportBlock.cs" />
+    <Compile Include="Rtcp\RtcpRR.cs" />
+    <Compile Include="Rtcp\RtcpSDES.cs" />
+    <Compile Include="Rtcp\RtcpSDESChunk.cs" />
+    <Compile Include="Rtcp\RtcpSR.cs" />
+    <Compile Include="Rtcp\RtcpType.cs" />
+    <Compile Include="RtpReceiver.cs" />
+    <Compile Include="RtpSender.cs" />
+    <Compile Include="RtpSession.cs" />
+    <Compile Include="Rtp\Rtp4629.cs" />
+    <Compile Include="Rtp\RtpFrame.cs" />
+    <Compile Include="Rtp\RtpPacket.cs" />
+    <Compile Include="Rtp\RtpParticipant.cs" />
+    <Compile Include="Socket\TcpSocket.cs" />
+    <Compile Include="Socket\UdpSocket.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Doc\Rfc3550.txt" />
+    <Content Include="Doc\Rfc3550-zh.txt" />
+    <Content Include="Doc\Rfc4629.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
